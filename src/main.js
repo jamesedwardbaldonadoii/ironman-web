@@ -10,6 +10,7 @@ import './plugins'
 import './thirdParty'
 
 import './scss/style.scss'
+import './assets/css/tailwind.css'
 import './assets/fonts/bebasneue.css'
 
 setGlobalHelpers()

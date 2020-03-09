@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <AppHeader></AppHeader>
-    <div class="wrapper">
+    <div class="wrapper bg-grey-700 h-full">
       <transition name="fade">
         <router-view></router-view>
       </transition>
@@ -22,4 +22,4 @@ export default {
     AppFooter
   }
 }
-</script>s
+</script>
