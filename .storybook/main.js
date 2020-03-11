@@ -7,7 +7,7 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-knobs',
     '@storybook/addon-viewport',
-    // '@storybook/addon-docs'
+    '@storybook/addon-docs'
   ],
   webpack: config => {
     config.module.rules.push({
