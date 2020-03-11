@@ -1,5 +1,5 @@
 <template>
-  <button class="inline-flex items-center justify-center border border-solid rounded outline-none" :class="[btnColor, btnSize]">
+  <button class="inline-flex items-center justify-center outline-none border border-solid rounded" :class="[btnColor, btnSize]">
     <AppIcon v-if="icon" :name="icon" :color="iconProps.color" :width="iconProps.width" :height="iconProps.height" :class="{ 'mr-1': label }" /> {{label}}
   </button>
 </template>
@@ -15,7 +15,7 @@ import AppIcon from './Icons.vue'
     props: {
       color: {
         type: String,
-        default: 'white'
+        default: 'white',
       },
       label: {
         type: String,
@@ -28,10 +28,6 @@ import AppIcon from './Icons.vue'
       size: {
         type: String,
         default: 'md'
-      },
-      href: {
-        type: String,
-        default: null
       }
     },
     created: function () {
@@ -52,14 +48,23 @@ import AppIcon from './Icons.vue'
           xl: 'h-6'
         };
 
-        this.iconProps.color = `text-${this.color}-200`;
+        if(this.color === 'white') {
+          this.iconProps.color = `text-gray-700`;
+        } else {
+          this.iconProps.color = `text-${this.color}-200`;
+        }
+
         this.iconProps.width = basicWidth[this.size];
         this.iconProps.height = basicHeight[this.size];
       }
     },
     computed: {
       btnColor () {
-        return `bg-${this.color}-600 border-${this.color}-500 text-${this.color}-200 hover:bg-${this.color}-700`;
+        if(this.color === 'white') {
+          return `bg-${this.color} border-gray-600 text-gray-700 hover:bg-gray-400`;
+        } else {
+          return `bg-${this.color}-600 border-${this.color}-500 text-${this.color}-200 hover:bg-${this.color}-700`;
+        }
       },
 
       btnSize () {

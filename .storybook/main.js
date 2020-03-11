@@ -1,13 +1,27 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../src/components/stories/*.stories.js'],
+  stories: ['../src/components/stories/*.stories.(js|mdx)'],
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-knobs',
     '@storybook/addon-viewport',
-    '@storybook/addon-docs'
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        babelOptions: {
+          presets: [
+            [
+              '@vue/cli-plugin-babel/preset',
+              {
+                jsx: false
+              }
+            ]
+          ]
+        }
+      }
+    }
   ],
   webpack: config => {
     config.module.rules.push({

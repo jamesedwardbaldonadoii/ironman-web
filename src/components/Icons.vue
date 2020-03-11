@@ -17,6 +17,7 @@ import arrowDown from './icons/arrowDown'
 import sort from './icons/sort'
 import sortDown from './icons/sortDown'
 import sortUp from './icons/sortUp'
+import home from './icons/home'
 
 export default {
   name: 'icons',
@@ -35,7 +36,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'text-white'
+      default: 'text-gray-800'
     }
   },
 
@@ -46,7 +47,8 @@ export default {
     arrowDown,
     sort,
     sortDown,
-    sortUp
+    sortUp,
+    home
   }
 }
 </script>

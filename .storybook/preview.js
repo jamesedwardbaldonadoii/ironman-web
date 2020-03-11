@@ -9,12 +9,14 @@ import '@/scss/style.scss';
 import '@/assets/css/tailwind.css';
 
 // import custom components
-import MyButton from '@/components/Button.vue';
-import HelloWorld from '@/components/HelloWorld.vue'
+import Button from '@/components/Button.vue';
+import Icons from '@/components/Icons.vue'
+import Box from '@/components/Box.vue'
 
 // register custom components
-Vue.component('MyButton', MyButton);
-Vue.component('HelloWorld', HelloWorld);
+Vue.component('AppButton', Button);
+Vue.component('AppIcons', Icons);
+Vue.component('AppBox', Box);
 
 // install vue plugins
 Vue.use(Vuex);
