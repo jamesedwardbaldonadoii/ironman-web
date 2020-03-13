@@ -89,13 +89,10 @@ export default {
     },
 
     textColorClass() {
-      if ((this.disabled || this.loading) && this.color === "white") {
+      if ((this.disabled || this.loading) && this.color === "white")
         return `text-gray-500`;
-      }
 
-      if (this.color === "white") {
-        return `text-gray-700`;
-      }
+      if (this.color === "white") return `text-gray-700`;
 
       return `text-${this.color}-200`;
     },
