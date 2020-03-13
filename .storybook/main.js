@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../src/components/stories/*.stories.(js|mdx)'],
+  stories: ['@/stories/*.stories.(js|mdx)'],
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-links',
@@ -27,7 +27,7 @@ module.exports = {
     config.module.rules.push({
       test: /\.scss$/,
       loaders: ["style-loader", "css-loader", "sass-loader"],
-      include: path.resolve(__dirname, "../")
+      include: path.resolve(__dirname, "..")
     });
 
     config.resolve.alias = {
