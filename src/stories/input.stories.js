@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import AppInput from '../components/Input.vue';
+import Vue from 'vue'
+import AppInput from '../components/Input.vue'
 
-export default { title: 'Input', component: AppInput };
+export default { title: 'Input', component: AppInput }
 
 export const Basic = () => '<div class="grid gap-3">' +
 	'<div class="grid grid-cols-3 gap-3 items-end">' +
@@ -20,4 +20,4 @@ export const Basic = () => '<div class="grid gap-3">' +
 	'<AppInput value="" placeholder="************" password/>' +
 	'<AppInput value="" placeholder="************" password error="true"/>' +
 	'</div>' +
-	'</div>';
+	'</div>'

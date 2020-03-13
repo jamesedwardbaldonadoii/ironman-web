@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import AppButton from '../components/Button.vue'
 
-export default { title: 'Button', component: AppButton };
+export default { title: 'Button', component: AppButton }
 
 export const Basic = () => '<div>' +
 	'<div class="grid grid-cols-10 gap-3">' +
@@ -51,7 +51,7 @@ export const Basic = () => '<div>' +
 	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" loading />' +
 	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" loading />' +
 	'</div>' +
-	'</div>';
+	'</div>'
 
 export const color = () => '<div class="grid grid-cols-10 gap-3">' +
 	'<app-button label="default" />' +
@@ -59,14 +59,14 @@ export const color = () => '<div class="grid grid-cols-10 gap-3">' +
 	'<app-button color="gray" label="gray" />' +
 	'<app-button color="blue" label="blue" />' +
 	'<app-button color="red" label="red" />' +
-	'</div>';
+	'</div>'
 
 export const sizes = () => '<div>' +
 	'<app-button class="m-2 w-20 align-bottom" size="sm" color="green" label="sm" />' +
 	'<app-button class="m-2 w-20 align-bottom" size="md" color="blue" label="md" />' +
 	'<app-button class="m-2 w-20 align-bottom" size="lg" color="red" label="lg" />' +
 	'<app-button class="m-2 w-20 align-bottom" size="xl" color="gray" label="xl" />' +
-	'</div>';
+	'</div>'
 
 export const shapes = () => '<div>' +
 	'<app-button class="m-2 align-bottom" icon="home" size="sm" circle />' +
@@ -74,7 +74,7 @@ export const shapes = () => '<div>' +
 	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" />' +
 	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" circle />' +
 	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" />' +
-	'</div>';
+	'</div>'
 
 export const disabled = () => '<div>' +
 	'<app-button class="m-2 align-bottom" icon="home" size="sm" label="default" disabled />' +
@@ -82,7 +82,7 @@ export const disabled = () => '<div>' +
 	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" disabled />' +
 	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" disabled />' +
 	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" disabled />' +
-	'</div>';
+	'</div>'
 
 export const loading = () => '<div>' +
 	'<app-button class="m-2 align-bottom" icon="home" size="sm" label="default" loading />' +
@@ -90,10 +90,10 @@ export const loading = () => '<div>' +
 	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" loading />' +
 	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" loading />' +
 	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" loading />' +
-	'</div>';
+	'</div>'
 
 
 export const asAComponent = () => ({
 	components: { AppButton },
 	template: '<app-button label="Component Button" />'
-});
+})
