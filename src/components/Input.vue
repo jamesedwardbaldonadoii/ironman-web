@@ -29,13 +29,13 @@
 </template>
 
 <script>
-import { regex } from "../config";
+import { regex } from '../config'
 
 export default {
   components: {
     regex
   },
-  name: "AppInput",
+  name: 'AppInput',
 
   props: {
     label: {
@@ -72,77 +72,77 @@ export default {
 
   data: () => {
     return {
-      borderColor: "border-gray-200",
+      borderColor: 'border-gray-200',
       errorMsg: null,
       inputValue: null
-    };
+    }
   },
 
   computed: {
     labelId() {
-      return `inputId${this.getRandomInt()}`;
+      return `inputId${this.getRandomInt()}`
     },
     hasError() {
-      return this.error || this.errorMsg;
+      return this.error || this.errorMsg
     },
     errorMessage() {
-      return typeof this.error === "boolean" ? this.errorMsg : this.error;
+      return typeof this.error === 'boolean' ? this.errorMsg : this.error
     },
     inputType() {
-      if (this.password) return "password";
+      if (this.password) return 'password'
 
-      if (this.email) return "email";
+      if (this.email) return 'email'
 
-      return "text";
+      return 'text'
     },
     listeners() {
       return {
         ...this.$listeners,
         focus: e => {
-          const value = e.target.value;
-          this.borderColor = "border-blue-500";
+          const value = e.target.value
+          this.borderColor = 'border-blue-500'
         },
-        input: e => this.$emit("input", e.target.value),
+        input: e => this.$emit('input', e.target.value),
         blur: e => {
-          const value = e.target.value;
+          const value = e.target.value
 
-          this.borderColor = "border-gray-200";
+          this.borderColor = 'border-gray-200'
 
           if (this.required && !value) {
             return (this.errorMsg =
               (this.label
                 ? this.label
                 : `<span class="capitalize">${this.inputType}</span>`) +
-              " field cannot be empty.");
+              ' field cannot be empty.')
           }
 
           if (this.email && !regex.EMAIL.test(value)) {
-            return (this.errorMsg = "Invalid email address.");
+            return (this.errorMsg = 'Invalid email address.')
           }
 
-          return (this.errorMsg = null);
+          return (this.errorMsg = null)
         }
-      };
+      }
     },
     disabledClass() {
-      if (this.disabled) return "app-disabled";
+      if (this.disabled) return 'app-disabled'
 
-      return "text-gray-700";
+      return 'text-gray-700'
     }
   },
 
   methods: {
     getRandomInt() {
-      const min = 1;
-      const max = 1000000000;
-      return Math.floor(Math.random() * (max - min + 1) + min);
+      const min = 1
+      const max = 1000000000
+      return Math.floor(Math.random() * (max - min + 1) + min)
     }
   },
 
   mounted() {
     this.$nextTick().then(() => {
-      this.inputValue = this.value;
-    });
+      this.inputValue = this.value
+    })
   }
-};
+}
 </script>

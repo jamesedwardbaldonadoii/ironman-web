@@ -5,38 +5,40 @@
 </template>
 
 <script>
-import write from "./icons/write";
-import moon from "./icons/moon";
-import done from "./icons/done";
-import arrowDown from "./icons/arrowDown";
-import sort from "./icons/sort";
-import sortDown from "./icons/sortDown";
-import sortUp from "./icons/sortUp";
-import home from "./icons/home";
+import logo from './icons/logo'
+import write from './icons/write'
+import moon from './icons/moon'
+import done from './icons/done'
+import arrowDown from './icons/arrowDown'
+import sort from './icons/sort'
+import sortDown from './icons/sortDown'
+import sortUp from './icons/sortUp'
+import home from './icons/home'
 
 export default {
-  name: "AppIcons",
+  name: 'AppIcons',
 
   props: {
     name: {
       type: String,
-      default: "moon"
+      default: 'moon'
     },
     width: {
       type: String,
-      default: "w-4"
+      default: 'w-4'
     },
     height: {
       type: String,
-      default: "h-4"
+      default: 'h-4'
     },
     color: {
       type: String,
-      default: "text-gray-800"
+      default: 'text-gray-800'
     }
   },
 
   components: {
+    logo,
     write,
     moon,
     done,
@@ -46,5 +48,5 @@ export default {
     sortUp,
     home
   }
-};
+}
 </script>

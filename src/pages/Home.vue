@@ -1,11 +1,8 @@
 <template>
-  <div class="home page">
-   
-  </div>
+  <div class="home page"></div>
 </template>
 
 <script>
-
 export default {
   name: 'IndexPage',
 
@@ -21,7 +18,6 @@ export default {
     }
   },
 
-  methods: {
-  }
+  methods: {}
 }
 </script>

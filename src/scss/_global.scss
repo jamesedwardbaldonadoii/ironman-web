@@ -5,17 +5,12 @@ html, body, #app {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: Lato, sans-serif;
 }
 
 #app {
-  background-color: #efeeed;
   display: flex;
   flex-direction: column;
-}
-
-img {
-  vertical-align: top;
 }
 
 * {
@@ -36,7 +31,7 @@ button {
 
 .wrapper {
   width: 100%;
-  min-width: 300px; // and padding + 10 + 10
+  min-width: 300px;
 
   margin: 0 auto;
   padding: 0 10px;

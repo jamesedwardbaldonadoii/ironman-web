@@ -19,45 +19,45 @@
 </template>
 
 <script>
-import { AuthService } from "../services/auth.service";
+import { AuthService } from '../services/auth.service'
 
 export default {
-  name: "Login",
-  data() {
+  name: 'Login',
+  data () {
     return {
-      email: "user@user.com",
-      password: "123456",
-      error: ""
-    };
+      email: 'user@user.com',
+      password: '123456',
+      error: ''
+    }
   },
 
   methods: {
-    makeLogin() {
+    makeLogin () {
       AuthService.makeLogin({
         email: this.email,
         password: this.password
       })
         .then(response => {
-          this.error = "";
+          this.error = ''
         })
         .then(() => {
           this.$store
-            .dispatch("user/getCurrent")
-            .then(() => this.$router.push("profile"))
-            .catch(error => console.log(error));
+            .dispatch('user/getCurrent')
+            .then(() => this.$router.push('profile'))
+            .catch(error => console.log(error))
         })
         .catch(error => {
-          console.log("error", error);
-          this.$store.commit("toast/NEW", {
-            type: "error",
+          console.log('error', error)
+          this.$store.commit('toast/NEW', {
+            type: 'error',
             message: error.message
-          });
+          })
           this.error =
             error.status === 404
-              ? "User with same email not found"
-              : error.message;
-        });
+              ? 'User with same email not found'
+              : error.message
+        })
     }
   }
-};
+}
 </script>

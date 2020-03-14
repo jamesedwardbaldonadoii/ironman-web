@@ -13,4 +13,5 @@ export const Basic = () => '<div class="flex flex-wrap">' +
 	'<AppBox><AppIcons class="box-item" name="sortDown"/> sortDown</AppBox>' +
 	'<AppBox><AppIcons class="box-item" name="sortUp"/> sortUp</AppBox>' +
 	'<AppBox><AppIcons class="box-item" name="home"/> home</AppBox>' +
+	'<AppBox><AppIcons class="box-item" name="logo"/> logo</AppBox>' +
 	'</div>'

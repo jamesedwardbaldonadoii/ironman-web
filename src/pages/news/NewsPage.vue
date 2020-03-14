@@ -17,13 +17,13 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters } from 'vuex'
 
-import prepareQueryParamsMixin from "../../mixins/prepareQueryParamsMixin";
-import prepareFetchParamsMixin from "../../mixins/prepareFetchParamsMixin";
+import prepareQueryParamsMixin from '../../mixins/prepareQueryParamsMixin'
+import prepareFetchParamsMixin from '../../mixins/prepareFetchParamsMixin'
 
 export default {
-  name: "NewsPage",
+  name: 'NewsPage',
   mixins: [prepareQueryParamsMixin, prepareFetchParamsMixin],
 
   props: {
@@ -32,70 +32,70 @@ export default {
   },
 
   watch: {
-    "pagination.limit": function() {
+    'pagination.limit': () => {
       this.$router.replace({
         query: this.useInUrlQueryPropList
-      });
-      this.fetchData();
+      })
+      this.fetchData()
     },
-    "pagination.page": function() {
+    'pagination.page': () => {
       this.$router.replace({
         query: this.useInUrlQueryPropList
-      });
-      this.fetchData();
+      })
+      this.fetchData()
     },
     limit: {
-      handler: function(newVal) {
-        this.$store.commit("news/SET_PAGINATION", { limit: newVal });
+      handler: newVal => {
+        this.$store.commit('news/SET_PAGINATION', { limit: newVal })
       },
       immediate: true
     },
     page: {
-      handler: function(newVal) {
-        this.$store.commit("news/SET_PAGINATION", { page: newVal });
+      handler: newVal => {
+        this.$store.commit('news/SET_PAGINATION', { page: newVal })
       },
       immediate: true
     }
   },
 
-  data() {
+  data () {
     return {
-      newsText: "NewsPage Component"
-    };
+      newsText: 'NewsPage Component'
+    }
   },
 
   methods: {
-    fetchData() {
-      this.$store.dispatch("news/getListPublic", { params: this.fetchParams });
+    fetchData () {
+      this.$store.dispatch('news/getListPublic', { params: this.fetchParams })
     }
   },
 
   computed: {
-    ...mapState("news", {
-      news: "items",
-      pagination: "pagination",
-      error: "error",
-      loading: "loading"
+    ...mapState('news', {
+      news: 'items',
+      pagination: 'pagination',
+      error: 'error',
+      loading: 'loading'
     }),
-    ...mapGetters("news", ["isEmpty"]),
-    useInUrlQueryPropList() {
+    ...mapGetters('news', ['isEmpty']),
+    useInUrlQueryPropList () {
       return this.prepareQueryParamsMixin({
         limit: this.pagination.limit,
         page: this.pagination.page
-      });
+      })
     },
-    fetchParams() {
+    fetchParams () {
       const pagination = this.prepareFetchParamsMixin({
         limit: this.pagination.limit,
         page: this.pagination.page
-      });
+      })
 
-      return { ...pagination };
+      return { ...pagination }
     }
   },
 
-  created() {
-    this.fetchData();
+  created () {
+    this.fetchData()
   }
-};
+}
 </script>

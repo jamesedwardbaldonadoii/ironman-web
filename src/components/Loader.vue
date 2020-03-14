@@ -11,35 +11,35 @@
 
 <script>
 export default {
-  name: "AppLoader",
+  name: 'AppLoader',
 
   props: {
     size: {
       type: String,
-      default: "md"
+      default: 'md'
     }
   },
 
   computed: {
     loaderSizeClass() {
-      let size;
+      let size
 
       switch (this.size) {
-        case "sm":
-          size = "w-5 h-4";
-          break;
-        case "lg":
-          size = "w-10 h-8";
-          break;
-        case "xl":
-          size = "w-12 h-10";
-          break;
+        case 'sm':
+          size = 'w-5 h-4'
+          break
+        case 'lg':
+          size = 'w-10 h-8'
+          break
+        case 'xl':
+          size = 'w-12 h-10'
+          break
         default:
-          size = "w-8 h-4";
+          size = 'w-8 h-4'
       }
 
-      return size;
+      return size
     }
   }
-};
+}
 </script>

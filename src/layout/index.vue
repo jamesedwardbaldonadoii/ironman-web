@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <AppHeader></AppHeader>
-    <div class="wrapper bg-grey-700 h-full">
+    <div class="wrapper bg-grey-900 h-full">
       <transition name="fade">
         <router-view></router-view>
       </transition>
     </div>
     <AppFooter></AppFooter>
   </div>
-
 </template>
 
 <script>

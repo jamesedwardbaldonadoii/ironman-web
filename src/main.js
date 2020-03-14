@@ -10,22 +10,21 @@ import './plugins'
 import './thirdParty'
 
 import './scss/style.scss'
-import './assets/fonts/bebasneue.css'
 
 setGlobalHelpers()
 Vue.config.productionTip = false
 
 new Vue({
-	name: 'Root',
-	router,
-	store,
-	mounted() {
-		store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth)
-		window.addEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
-	},
+  name: 'Root',
+  router,
+  store,
+  mounted () {
+    store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth)
+    window.addEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
+  },
 
-	beforeDestroy() {
-		window.removeEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
-	},
-	render: h => h(AppLayout)
+  beforeDestroy () {
+    window.removeEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
+  },
+  render: h => h(AppLayout)
 }).$mount('#app')

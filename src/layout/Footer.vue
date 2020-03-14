@@ -1,8 +1,6 @@
 <template>
   <div class="footer">
-    <div class="wrapper">
-      Best portal © 2017 - {{ currentYear }}
-    </div>
+    <div class="wrapper">Best portal © 2017 - {{ currentYear }}</div>
   </div>
 </template>
 
@@ -16,13 +14,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.footer {
-  text-align: center;
-  background-color: #ccc;
-  padding: 40px 0;
-  width: 100%;
-  margin-top: auto;
-}
-</style>
