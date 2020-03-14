@@ -1,0 +1,7 @@
+.app-disabled {
+	@apply bg-gray-200;
+
+	* {
+		@apply text-gray-500 cursor-not-allowed bg-gray-200;
+	}
+}

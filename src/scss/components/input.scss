@@ -1,0 +1,19 @@
+.app-input {
+	@apply block;
+	
+	> label {
+		@apply mb-2 block text-gray-700 text-sm font-bold;
+	}
+
+	.container {
+		@apply flex items-center justify-center border border-solid shadow appearance-none border rounded w-full overflow-hidden;
+	}
+
+	.slot {
+		@apply flex-none p-2 h-full border-solid border-gray-200;
+	}
+
+	.text-error {
+		@apply h-3 mt-1 text-right block text-red-500 italic text-xs;
+	}
+}

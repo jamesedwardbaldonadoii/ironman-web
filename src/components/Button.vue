@@ -1,6 +1,6 @@
 <template>
   <button
-    class="inline-flex items-center justify-center relative ripple-btn focus:outline-none border border-solid rounded transtion-background duration-700 bg-center active:duration-0 ripple-transition"
+    class="app-button"
     :disabled="disabledBtn"
     :class="[btnColorClass, textColorClass, btnSizeClass, disabledBtn, {'rounded-full': circle}]"
     @click="onClick"
@@ -71,6 +71,7 @@ export default {
       const colorExist = ["white", "green", "red", "blue", "gray"].includes(
         this.color
       );
+
       this.color = colorExist ? this.color : "white";
 
       if (this.disabled || this.loading) {
@@ -155,53 +156,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-.ripple-transition {
-  &.red {
-    &:hover {
-      background: #c53030 radial-gradient(circle, transparent 1%, #e53e3e 1%)
-        center/15000%;
-    }
-    &:active {
-      background-size: 100%;
-    }
-  }
-  &.blue {
-    &:hover {
-      background: #2b6cb0 radial-gradient(circle, transparent 1%, #3182ce 1%)
-        center/15000%;
-    }
-    &:active {
-      background-size: 100%;
-    }
-  }
-  &.gray {
-    &:hover {
-      background: #4a5568 radial-gradient(circle, transparent 1%, #718096 1%)
-        center/15000%;
-    }
-    &:active {
-      background-size: 100%;
-    }
-  }
-  &.white {
-    &:hover {
-      background: #cbd5e0 radial-gradient(circle, transparent 1%, #a0aec0 1%)
-        center/15000%;
-    }
-    &:active {
-      background-size: 100%;
-    }
-  }
-  &.green {
-    &:hover {
-      background: #2f855a radial-gradient(circle, transparent 1%, #38a169 1%)
-        center/15000%;
-    }
-    &:active {
-      background-size: 100%;
-    }
-  }
-}
-</style>

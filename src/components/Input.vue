@@ -1,35 +1,30 @@
 <template>
-  <div class="block">
-    <label
-      class="mb-2 block text-gray-700 text-sm font-bold"
-      :class="{ 'text-red-500': hasError }"
-      :for="labelId"
-    >{{ label }}</label>
+  <div class="app-input">
+    <label :class="{ 'text-red-500': hasError }" :for="labelId">{{ label }}</label>
 
-    <div
-      class="flex items-center justify-center border border-solid shadow appearance-none border rounded w-full overflow-hidden"
-      :class="[borderColor, {'border-red-500': hasError}]"
-    >
-      <div class="flex-none p-2 h-full border-r border-solid border-gray-200" v-if="$slots.before">
+    <div class="container" :class="[borderColor, disabledClass, {'border-red-500': hasError}]">
+      <div class="slot border-r" v-if="$slots.before">
         <slot name="before"></slot>
       </div>
 
       <div class="flex-grow">
         <input
-          class="p-3 w-full h-full active:outline-none focus:outline-none text-gray-700 leading-tight"
+          class="p-3 w-full h-full active:outline-none focus:outline-none leading-tight"
+          :class="disabledClass"
           :id="labelId"
           v-model="inputValue"
           :type="inputType"
+          :disabled="disabled"
           :placeholder="placeholder || 'Type here..'"
           v-on="listeners"
         />
       </div>
 
-      <div class="flex-none p-2 h-full border-l border-solid border-gray-200" v-if="$slots.after">
+      <div class="slot border-l" v-if="$slots.after">
         <slot name="after"></slot>
       </div>
     </div>
-    <em class="h-3 mt-1 text-right block text-red-500 italic text-xs" v-html="errorMessage"></em>
+    <em class="text-error" v-html="errorMessage"></em>
   </div>
 </template>
 
@@ -55,6 +50,10 @@ export default {
       default: false
     },
     required: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
       type: Boolean,
       default: false
     },
@@ -124,6 +123,11 @@ export default {
           return (this.errorMsg = null);
         }
       };
+    },
+    disabledClass() {
+      if (this.disabled) return "app-disabled";
+
+      return "text-gray-700";
     }
   },
 

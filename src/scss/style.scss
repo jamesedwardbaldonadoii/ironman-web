@@ -7,4 +7,20 @@
 @import "animations";
 
 
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/* 
+	Custom Components styling 
+*/
+@import "components/box";
 @import "components/loader";
+@import "components/disabled";
+@import "components/button";
+@import "components/input";
+
+/* 
+	Page styling 
+*/
+
+@import "tailwindcss/utilities";

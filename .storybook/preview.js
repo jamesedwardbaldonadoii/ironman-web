@@ -6,7 +6,6 @@ import Vuex from 'vuex';
 
 //import scss
 import '@/scss/style.scss';
-import '@/assets/css/tailwind.css';
 
 // import custom components
 import Button from '@/components/Button.vue';

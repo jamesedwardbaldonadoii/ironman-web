@@ -5,95 +5,95 @@ export default { title: 'Button', component: AppButton }
 
 export const Basic = () => '<div>' +
 	'<div class="grid grid-cols-10 gap-3">' +
-	'<app-button label="default" />' +
-	'<app-button color="green" label="green" />' +
-	'<app-button color="gray" label="gray" />' +
-	'<app-button color="blue" label="blue" />' +
-	'<app-button color="red" label="red" />' +
+	'<AppButton label="default" />' +
+	'<AppButton color="green" label="green" />' +
+	'<AppButton color="gray" label="gray" />' +
+	'<AppButton color="blue" label="blue" />' +
+	'<AppButton color="red" label="red" />' +
 	'</div>' +
 	'<div>' +
-	'<app-button class="m-2 w-20 align-bottom" size="sm" color="green" label="sm" />' +
-	'<app-button class="m-2 w-20 align-bottom" size="md" color="blue" label="md" />' +
-	'<app-button class="m-2 w-20 align-bottom" size="lg" color="red" label="lg" />' +
-	'<app-button class="m-2 w-20 align-bottom" size="xl" color="gray" label="xl" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="sm" color="green" label="sm" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="md" color="blue" label="md" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="lg" color="red" label="lg" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="xl" color="gray" label="xl" />' +
 	'</div>' +
 	'<div>' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" />' +
 	'</div>' +
 	'<div>' +
-	'<app-button class="m-2 align-bottom" icon="home" size="sm" />' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" />' +
+	'<AppButton class="m-2 align-bottom" icon="home" size="sm" />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" />' +
 	'</div>' +
 	'<div>' +
-	'<app-button class="m-2 align-bottom" icon="home" size="sm" circle />' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" circle />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" circle />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" circle />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" circle />' +
+	'<AppButton class="m-2 align-bottom" icon="home" size="sm" circle />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" circle />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" circle />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" circle />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" circle />' +
 	'</div>' +
 	'<div>' +
-	'<app-button class="m-2 align-bottom" icon="home" size="sm" disabled />' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" disabled />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" disabled />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" disabled />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" disabled />' +
+	'<AppButton class="m-2 align-bottom" icon="home" size="sm" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" disabled />' +
 	'</div>' +
 	'<div>' +
-	'<app-button class="m-2 align-bottom" icon="home" size="sm" loading circle />' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" loading />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" loading />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" loading />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" loading />' +
+	'<AppButton class="m-2 align-bottom" icon="home" size="sm" loading circle />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" loading />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" loading />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" loading />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" loading />' +
 	'</div>' +
 	'</div>'
 
 export const color = () => '<div class="grid grid-cols-10 gap-3">' +
-	'<app-button label="default" />' +
-	'<app-button color="green" label="green" />' +
-	'<app-button color="gray" label="gray" />' +
-	'<app-button color="blue" label="blue" />' +
-	'<app-button color="red" label="red" />' +
+	'<AppButton label="default" />' +
+	'<AppButton color="green" label="green" />' +
+	'<AppButton color="gray" label="gray" />' +
+	'<AppButton color="blue" label="blue" />' +
+	'<AppButton color="red" label="red" />' +
 	'</div>'
 
 export const sizes = () => '<div>' +
-	'<app-button class="m-2 w-20 align-bottom" size="sm" color="green" label="sm" />' +
-	'<app-button class="m-2 w-20 align-bottom" size="md" color="blue" label="md" />' +
-	'<app-button class="m-2 w-20 align-bottom" size="lg" color="red" label="lg" />' +
-	'<app-button class="m-2 w-20 align-bottom" size="xl" color="gray" label="xl" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="sm" color="green" label="sm" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="md" color="blue" label="md" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="lg" color="red" label="lg" />' +
+	'<AppButton class="m-2 w-20 align-bottom" size="xl" color="gray" label="xl" />' +
 	'</div>'
 
 export const shapes = () => '<div>' +
-	'<app-button class="m-2 align-bottom" icon="home" size="sm" circle />' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" circle />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" circle />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" />' +
+	'<AppButton class="m-2 align-bottom" icon="home" size="sm" circle />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" circle />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" circle />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" />' +
 	'</div>'
 
 export const disabled = () => '<div>' +
-	'<app-button class="m-2 align-bottom" icon="home" size="sm" label="default" disabled />' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" disabled />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" disabled />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" disabled />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" disabled />' +
+	'<AppButton class="m-2 align-bottom" icon="home" size="sm" label="default" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" disabled />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" disabled />' +
 	'</div>'
 
 export const loading = () => '<div>' +
-	'<app-button class="m-2 align-bottom" icon="home" size="sm" label="default" loading />' +
-	'<app-button class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" loading />' +
-	'<app-button class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" loading />' +
-	'<app-button class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" loading />' +
-	'<app-button class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" loading />' +
+	'<AppButton class="m-2 align-bottom" icon="home" size="sm" label="default" loading />' +
+	'<AppButton class="m-2 align-bottom" color="green" icon="moon" size="sm" label="green" loading />' +
+	'<AppButton class="m-2 align-bottom" color="blue" icon="write" size="md" label="blue" loading />' +
+	'<AppButton class="m-2 align-bottom" color="red" icon="done" size="lg" label="red" loading />' +
+	'<AppButton class="m-2 align-bottom" color="gray" icon="sort" size="xl" label="gray" loading />' +
 	'</div>'
 
 
 export const asAComponent = () => ({
 	components: { AppButton },
-	template: '<app-button label="Component Button" />'
+	template: '<AppButton label="Component Button" />'
 })
