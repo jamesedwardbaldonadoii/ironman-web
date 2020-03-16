@@ -18,6 +18,7 @@ new Vue({
   name: 'Root',
   router,
   store,
+  
   mounted () {
     store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth)
     window.addEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))

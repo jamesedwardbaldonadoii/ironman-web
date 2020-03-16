@@ -1,7 +1,7 @@
 @import "reset";
 
-/* 
-	Import fonts 
+/*
+	Import fonts
 */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap');
 
@@ -15,8 +15,8 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
-/* 
-	Custom Components styling 
+/*
+	Custom Components styling
 */
 @import "components/box";
 @import "components/loader";
@@ -24,8 +24,15 @@
 @import "components/button";
 @import "components/input";
 
-/* 
-	Page styling 
+/*
+	Page styling
 */
+@import "pages/home";
+
+/*
+	Extra layout styling
+*/
+@import "layout/login";
+
 
 @import "tailwindcss/utilities";

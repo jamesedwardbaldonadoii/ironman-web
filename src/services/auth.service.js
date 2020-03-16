@@ -23,11 +23,12 @@ export class AuthService {
       axios.post(`${API_URL}/auth/login`, { email, password, fingerprint })
         .then(response => {
           _setAuthData({
-            refreshToken: response.data.data.refreshToken,
-            accessToken: response.data.data.accessToken,
-            exp: _parseTokenData(response.data.data.accessToken).exp
+            refreshToken: response.data.refreshToken,
+            accessToken: response.data.accessToken,
+            exp: _parseTokenData(response.data.accessToken).exp
           })
-          return resolve(new ResponseWrapper(response, response.data.data))
+
+          return resolve(new ResponseWrapper(response, response.data))
         }).catch(error => reject(new ErrorWrapper(error)))
     })
   }
@@ -58,7 +59,7 @@ export class AuthService {
         })
         return resolve(new ResponseWrapper(response, response.data))
       }).catch(error => {
-        console.log(error.response.data.code)
+        console.log('Refresh Token', error.response)
         _resetAuthData()
         $router.push({ name: 'login' })
         return reject(new ErrorWrapper(error))
@@ -71,6 +72,18 @@ export class AuthService {
    * @METHODS
    ******************************
    */
+
+  // static transformUrl (url, { server }) {
+  //   // Pass all `api://` requests to the API server.
+  //   if (url.indexOf('api://') === 0) {
+  //     if (!server && window.location.hostname === 'localhost') {
+  //       return '/api/' + url.slice('api://'.length)
+  //     }
+  //     // Transform to an absolute URL.
+  //     return configuration.api + '/' + url.slice('api://'.length)
+  //   }
+  //   return url
+  // }
 
   static isAccessTokenExpired () {
     const accessTokenExpDate = $store.state.auth.accessTokenExpDate - 10

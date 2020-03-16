@@ -1,0 +1,18 @@
+.login-image {
+  @apply absolute;
+
+  right: calc(100% + 10px);
+}
+.login-or {
+  @apply absolute bg-white px-1 text-gray-400;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 25px;
+}
+/*
+  Google Signin Button
+*/
+.abcRioButton {
+  border-radius: 3px !important;
+}

@@ -29,12 +29,8 @@
 </template>
 
 <script>
-import { regex } from '../config'
 
 export default {
-  components: {
-    regex
-  },
   name: 'AppInput',
 
   props: {
@@ -46,10 +42,6 @@ export default {
       default: false
     },
     email: {
-      type: Boolean,
-      default: false
-    },
-    required: {
       type: Boolean,
       default: false
     },
@@ -79,52 +71,37 @@ export default {
   },
 
   computed: {
-    labelId() {
+    labelId () {
       return `inputId${this.getRandomInt()}`
     },
-    hasError() {
-      return this.error || this.errorMsg
+    hasError () {
+      return this.error
     },
-    errorMessage() {
+    errorMessage () {
       return typeof this.error === 'boolean' ? this.errorMsg : this.error
     },
-    inputType() {
+    inputType () {
       if (this.password) return 'password'
 
       if (this.email) return 'email'
 
       return 'text'
     },
-    listeners() {
+    listeners () {
       return {
         ...this.$listeners,
         focus: e => {
-          const value = e.target.value
+          this.$emit('focus', e)
           this.borderColor = 'border-blue-500'
         },
         input: e => this.$emit('input', e.target.value),
         blur: e => {
-          const value = e.target.value
-
+          this.$emit('blur', e)
           this.borderColor = 'border-gray-200'
-
-          if (this.required && !value) {
-            return (this.errorMsg =
-              (this.label
-                ? this.label
-                : `<span class="capitalize">${this.inputType}</span>`) +
-              ' field cannot be empty.')
-          }
-
-          if (this.email && !regex.EMAIL.test(value)) {
-            return (this.errorMsg = 'Invalid email address.')
-          }
-
-          return (this.errorMsg = null)
         }
       }
     },
-    disabledClass() {
+    disabledClass () {
       if (this.disabled) return 'app-disabled'
 
       return 'text-gray-700'
@@ -132,14 +109,14 @@ export default {
   },
 
   methods: {
-    getRandomInt() {
+    getRandomInt () {
       const min = 1
       const max = 1000000000
       return Math.floor(Math.random() * (max - min + 1) + min)
     }
   },
 
-  mounted() {
+  mounted () {
     this.$nextTick().then(() => {
       this.inputValue = this.value
     })

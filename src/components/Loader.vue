@@ -21,7 +21,7 @@ export default {
   },
 
   computed: {
-    loaderSizeClass() {
+    loaderSizeClass () {
       let size
 
       switch (this.size) {

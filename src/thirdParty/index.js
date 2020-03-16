@@ -4,3 +4,7 @@
  */
 
 // import Vue from 'vue'
+
+import googleAuthService from './googleAuthService'
+
+export const GoogleAuthService = googleAuthService

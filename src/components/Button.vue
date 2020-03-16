@@ -17,8 +17,6 @@
     <div :class="{'invisible' : loading}">{{label}}</div>
   </button>
 </template>
-  </button>
-</template>
 
 <script>
 import AppIcon from './Icons.vue'
@@ -61,44 +59,40 @@ export default {
     },
     onClick: {
       type: Function,
-      required: false,
-      default: () => {}
+      required: false
     }
   },
 
+  data: () => ({
+    selectedColor: 'white'
+  }),
+
   computed: {
-    btnColorClass() {
-      const colorExist = ['white', 'green', 'red', 'blue', 'gray'].includes(
-        this.color
-      )
-
-      this.color = colorExist ? this.color : 'white'
-
+    btnColorClass () {
       if (this.disabled || this.loading) {
-        if (this.color === 'white') {
-          return `bg-gray-300 border-gray-500 text-gray-500 cursor-not-allowed`
+        if (this.selectedColor === 'white') {
+          return 'bg-gray-300 border-gray-500 text-gray-500 cursor-not-allowed'
         }
 
-        return `bg-${this.color}-400 border-${this.color}-500 text-${this.color}-200 cursor-not-allowed`
+        return `bg-${this.selectedColor}-400 border-${this.selectedColor}-500 text-${this.selectedColor}-200 cursor-not-allowed`
       }
 
-      if (this.color === 'white') {
-        return `${this.color} bg-${this.color} border-gray-600`
+      if (this.selectedColor === 'white') {
+        return `${this.selectedColor} bg-${this.selectedColor} border-gray-600`
       }
 
-      return `${this.color} bg-${this.color}-600 border-${this.color}-500`
+      return `${this.selectedColor} bg-${this.selectedColor}-600 border-${this.selectedColor}-500`
     },
 
-    textColorClass() {
-      if ((this.disabled || this.loading) && this.color === 'white')
-        return `text-gray-500`
+    textColorClass () {
+      if ((this.disabled || this.loading) && this.selectedColor === 'white') return 'text-gray-500'
 
-      if (this.color === 'white') return `text-gray-700`
+      if (this.selectedColor === 'white') return 'text-gray-700'
 
-      return `text-${this.color}-200`
+      return `text-${this.selectedColor}-200`
     },
 
-    iconSizeClass() {
+    iconSizeClass () {
       const iconProps = {}
       let size
 
@@ -126,7 +120,7 @@ export default {
       return iconProps
     },
 
-    btnSizeClass() {
+    btnSizeClass () {
       let size
 
       switch (this.size) {
@@ -146,13 +140,23 @@ export default {
       return size
     },
 
-    disabledBtn() {
+    disabledBtn () {
       if (this.loading || this.disabled) {
         return true
       }
 
       return false
     }
+  },
+
+  mounted () {
+    this.$nextTick().then(() => {
+      const colorExist = ['white', 'green', 'red', 'blue', 'gray'].includes(
+        this.color
+      )
+
+      this.selectedColor = colorExist ? this.color : 'white'
+    })
   }
 }
 </script>

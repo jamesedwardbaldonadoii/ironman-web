@@ -4,5 +4,9 @@ module.exports = {
     alias: {
       '@': require('path').resolve(__dirname, 'src')
     }
-  }
+  },
+
+  // Fix failed source mapping on dev tools
+  devtool: 'source-map'
+
 }
