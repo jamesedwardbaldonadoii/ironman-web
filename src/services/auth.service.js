@@ -23,12 +23,12 @@ export class AuthService {
       axios.post(`${API_URL}/auth/login`, { email, password, fingerprint })
         .then(response => {
           _setAuthData({
-            refreshToken: response.data.refreshToken,
-            accessToken: response.data.accessToken,
-            exp: _parseTokenData(response.data.accessToken).exp
+            refreshToken: response.data.data.refreshToken,
+            accessToken: response.data.data.accessToken,
+            exp: _parseTokenData(response.data.data.accessToken).exp
           })
 
-          return resolve(new ResponseWrapper(response, response.data))
+          return resolve(new ResponseWrapper(response, response.data.data))
         }).catch(error => reject(new ErrorWrapper(error)))
     })
   }
@@ -39,7 +39,7 @@ export class AuthService {
         .then(response => {
           _resetAuthData()
           $router.push({ name: 'login' })
-          return resolve(new ResponseWrapper(response, response.data))
+          return resolve(new ResponseWrapper(response, response.data.data))
         }).catch(error => reject(new ErrorWrapper(error)))
     })
   }
@@ -57,7 +57,7 @@ export class AuthService {
           accessToken: response.data.data.accessToken,
           exp: _parseTokenData(response.data.data.accessToken).exp
         })
-        return resolve(new ResponseWrapper(response, response.data))
+        return resolve(new ResponseWrapper(response, response.data.data))
       }).catch(error => {
         console.log('Refresh Token', error.response)
         _resetAuthData()
