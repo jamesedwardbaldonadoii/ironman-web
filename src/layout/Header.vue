@@ -1,5 +1,5 @@
 <template>
-  <div class="header wrapper">HEADER</div>
+  <div class="header">HEADER</div>
 </template>
 
 <script>

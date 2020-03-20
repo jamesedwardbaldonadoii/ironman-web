@@ -73,18 +73,6 @@ export class AuthService {
    ******************************
    */
 
-  // static transformUrl (url, { server }) {
-  //   // Pass all `api://` requests to the API server.
-  //   if (url.indexOf('api://') === 0) {
-  //     if (!server && window.location.hostname === 'localhost') {
-  //       return '/api/' + url.slice('api://'.length)
-  //     }
-  //     // Transform to an absolute URL.
-  //     return configuration.api + '/' + url.slice('api://'.length)
-  //   }
-  //   return url
-  // }
-
   static isAccessTokenExpired () {
     const accessTokenExpDate = $store.state.auth.accessTokenExpDate - 10
     const nowTime = Math.floor(new Date().getTime() / 1000)
@@ -172,10 +160,14 @@ function _getFingerprint () {
     }
 
     if (window.requestIdleCallback) {
-      console.log('get fp hash @ requestIdleCallback')
+      /**
+       * get fingerprint hash @requestIdleCallback
+       */
       requestIdleCallback(async () => resolve(await getHash()))
     } else {
-      console.log('get fp hash @ setTimeout')
+      /**
+       * get fingerprint hash @setTimeout
+       */
       setTimeout(async () => resolve(await getHash()), 500)
     }
   })

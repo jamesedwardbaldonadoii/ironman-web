@@ -92,7 +92,7 @@ export default {
         ...this.$listeners,
         focus: e => {
           this.$emit('focus', e)
-          this.borderColor = 'border-blue-500'
+          this.borderColor = 'border-teal-500'
         },
         input: e => this.$emit('input', e.target.value),
         blur: e => {

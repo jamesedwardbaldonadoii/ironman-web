@@ -8,7 +8,7 @@
         </div>
         <div class="pb-10 w-full flex-none text-center">
           Don't have an account?
-          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="signup">
             Sign Up
           </a>
         </div>

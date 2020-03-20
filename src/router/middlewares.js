@@ -24,7 +24,10 @@ export function checkAccessMiddleware (to, from, next) {
   const currentUserId = $store.state.user.currentUser.id
   const isAuthRoute = to.matched.some(item => item.meta.isAuth)
 
+  const EXCLUDE_PATH_IF_LOGIN = ['login', 'signup', 'forgot-password']
+
   if (isAuthRoute && currentUserId) return next()
+  if (currentUserId && (EXCLUDE_PATH_IF_LOGIN.indexOf(to.name) > -1)) return next({ name: 'dashboard' })
   if (isAuthRoute) return next({ name: 'login' })
   next()
 }

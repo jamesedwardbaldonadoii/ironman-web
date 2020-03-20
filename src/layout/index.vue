@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="flex flex-col">
     <AppHeader class="flex-none hidden"></AppHeader>
-    <div class="wrapper bg-white h-full flex-grow bg-white relative">
+    <div class="bg-white h-full flex-grow bg-white relative">
       <transition name="fade">
         <router-view></router-view>
       </transition>

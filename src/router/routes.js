@@ -4,8 +4,9 @@ import profilePostsPage from '../pages/profile/ProfilePostsPage.vue'
 
 // single pages
 import homePage from '../pages/Home.vue'
-import newsPage from '../pages/news/NewsPage.vue'
+import dashboardPage from '../pages/dashboard/dashboardPage.vue'
 import loginPage from '../pages/Login.vue'
+import signupPage from '../pages/Signup.vue'
 import notFoundPage from '../pages/NotFound.vue'
 
 import { routePropResolver } from './util'
@@ -19,14 +20,15 @@ export const routes = [
     meta: { title: `${DOMAIN_TITLE} | home` }
   },
   {
-    path: '/news',
-    name: 'news',
-    component: newsPage,
-    meta: { title: `${DOMAIN_TITLE} | news` },
+    path: '/dashboard',
+    name: 'dashboard',
+    component: dashboardPage,
+    meta: { isAuth: true, title: `${DOMAIN_TITLE} | Home` },
     props: routePropResolver
   },
   {
     path: '/profile',
+    name: 'profile',
     component: profilePage,
     meta: { isAuth: true, title: `${DOMAIN_TITLE} | profile` },
     children: [
@@ -42,6 +44,12 @@ export const routes = [
     name: 'login',
     component: loginPage,
     meta: { title: `${DOMAIN_TITLE} | login` }
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: signupPage,
+    meta: { title: `${DOMAIN_TITLE} | Signup` }
   },
   {
     path: '*',

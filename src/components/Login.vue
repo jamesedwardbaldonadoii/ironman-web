@@ -122,9 +122,9 @@ export default {
       this.validateEmail()
       this.validatePassword()
     },
-    resetErrorform () {
-      this.email = null
-      this.password = null
+    resetErrorValue () {
+      this.email = ''
+      this.password = ''
       this.error = {
         password: null,
         email: null
@@ -133,9 +133,9 @@ export default {
     makeLogin () {
       if (!this.isDisabled) {
         this.validateLogin()
-
-        if (this.isDisabled) return
       }
+
+      if (this.isDisabled) return
 
       this.isLoading = true
 
@@ -144,7 +144,7 @@ export default {
         password: this.password
       })
         .then(response => {
-          this.error = {}
+          this.resetErrorValue()
         })
         .then(() => {
           this.$store

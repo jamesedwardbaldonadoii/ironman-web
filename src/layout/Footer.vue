@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="wrapper">Best portal © 2017 - {{ currentYear }}</div>
+    <div>Best portal © 2017 - {{ currentYear }}</div>
   </div>
 </template>
 

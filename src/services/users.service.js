@@ -32,4 +32,12 @@ export class UsersService extends BaseService {
         })
     })
   }
+
+  static createUser (data = window.required()) {
+    return new Promise((resolve, reject) => {
+      return this.request().post(`${this.entity}/register`, data)
+        .then(response => resolve(this.responseWrapper(response, response.data.data)))
+        .catch(error => reject(this.errorWrapper(error)))
+    })
+  }
 }
