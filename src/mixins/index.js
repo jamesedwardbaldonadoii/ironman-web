@@ -4,12 +4,12 @@
 
 import Vue from 'vue'
 
-import currentUser from '../mixins/currentUser'
-import jumpTo from '../mixins/jumpTo'
-import formatDateTime from '../mixins/formatDateTime'
-import validate from '../mixins/validate'
+import currentUser from './currentUser'
+import jumpTo from './jumpTo'
+import formatDateTime from './formatDateTime'
+import sidebar from './sidebar'
 
 Vue.mixin(currentUser)
 Vue.mixin(jumpTo)
 Vue.mixin(formatDateTime)
-Vue.mixin(validate)
+Vue.mixin(sidebar)

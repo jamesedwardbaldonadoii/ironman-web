@@ -33,8 +33,8 @@ export const routes = [
     meta: { isAuth: true, title: `${DOMAIN_TITLE} | profile` },
     children: [
       {
-        path: '',
-        name: 'profile',
+        path: '/:pageid',
+        name: 'user-profile',
         component: profilePostsPage
       }
     ]

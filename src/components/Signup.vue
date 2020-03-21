@@ -38,7 +38,6 @@
         :error="error.password"
         placeholder="**********"
         v-on:blur="validatePassword"
-        @keyup.enter="makeLogin"
       />
       <div class="my-2 text-center text-xs text-gray-700">
         By clicking join now, you agree to Nombre's <a class="text-teal-500" href="user-agreement">User agreement</a>, <a class="text-teal-500" href="privacy-policy">Privacy Policy</a> and Cookie <a class="text-teal-500" href="cookie-policy">Cookie Policy</a>

@@ -1,7 +1,7 @@
 <template>
   <UiOnClickOutside :do="hideContent">
-    <div class="ui-base-menu-dropdown component">
-      <div class="icon-wrapper" @click="toggleMenu">
+    <div class="relative">
+      <div class="p-1 text-gray-500" @click="toggleMenu">
         <slot name="icon">
           <div class="default-menu-icon">
             <div class="line"></div>
@@ -11,7 +11,7 @@
         </slot>
       </div>
 
-      <div class="content" v-if="isShown" @click="hideContent">
+      <div class="dropdown-menu" :class="{active: isShown}" @click="hideContent">
         <slot></slot>
       </div>
     </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import UiOnClickOutside from './UiOnClickOutside'
+import UiOnClickOutside from './OnClickOutside'
 
 export default {
   name: 'UiBaseMenuDropdown',
@@ -69,43 +69,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.ui-base-menu-dropdown.component {
-  display: flex;
-  position: relative;
-  .icon {
-  }
-  .default-menu-icon {
-    cursor: pointer;
-    .line {
-      margin: 2px 0;
-      width: 25px;
-      height: 4px;
-      background-color: #cccccc;
-    }
-  }
-  .content {
-    min-width: 150px;
-    border: 1px solid $color-black-transparent;
-    border-radius: 4px;
-    padding: 5px 0;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: $color-white;
-    ul li {
-      line-height: 45px;
-      padding: 0 15px;
-      &:hover {
-        background-color: $color-black-transparent;
-        cursor: pointer;
-      }
-      a {
-        color: inherit;
-        display: block;
-      }
-    }
-  }
-}
-</style>

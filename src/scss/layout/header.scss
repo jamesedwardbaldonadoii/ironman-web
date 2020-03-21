@@ -1,0 +1,30 @@
+.app-header {
+  @apply h-16 flex z-50 items-center;
+
+  .search-wrapper {
+    width: 68px;
+    transition: width 0.3s ease-in-out 0s;
+
+    &:not(.active) {
+      * {
+        @apply shadow-none border-white;
+      }
+    }
+
+    &.active {
+      width: 200px;
+    }
+  }
+  .search-bar {
+    margin-top: 8px;
+  }
+
+  .slot {
+    padding-right: 2px;
+  }
+
+  .notification-count {
+    @apply absolute top-0 right-0 rounded-full bg-red-600 text-white w-4 h-4 text-center;
+    font-size: 0.70rem;
+  }
+}

@@ -1,0 +1,29 @@
+.dropdown-menu {
+  @apply absolute right-0 mr-2 py-2 w-48 bg-white rounded shadow opacity-0 invisible border border-solid border-gray-200;
+  top: 100%;
+  transform: translateY(-2em);
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+
+  &.active {
+    @apply visible opacity-100;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+  }
+
+  ul,
+  li {
+    list-style: none;
+  }
+
+  li {
+    &:hover {
+      @apply text-white bg-teal-500;
+    }
+
+    a {
+      @apply px-2 py-1 block;
+    }
+  }
+}

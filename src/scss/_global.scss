@@ -35,16 +35,14 @@ button {
 
   @include media_desktop {
     max-width: 1200px;
-    // background: red;
   }
 
   @include media_tablet {
-    // background: yellow;
     max-width: 1024px;
   }
 
   @include media_mobile {
-    // background: green;
+
   }
 }
 
@@ -52,6 +50,13 @@ button {
 .fade-enter-active {
   transition: opacity .8s
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter,
+.fade-leave-to {
   opacity: 0
+}
+
+// basic page layout
+.page {
+  @apply bg-gray-100 w-full h-full;
 }

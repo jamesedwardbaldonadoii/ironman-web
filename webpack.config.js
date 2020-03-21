@@ -8,5 +8,4 @@ module.exports = {
 
   // Fix failed source mapping on dev tools
   devtool: 'source-map'
-
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="news page">
+  <div class="page dashboard">
   </div>
 </template>
 

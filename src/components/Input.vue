@@ -2,13 +2,17 @@
   <div class="app-input">
     <label :class="{ 'text-red-500': hasError }" :for="labelId">{{ label }}</label>
 
-    <div class="container" :class="[borderColor, disabledClass, {'border-red-500': hasError}]">
-      <div class="slot border-r" v-if="$slots.before">
+    <div class="container"
+      :class="[borderColor, disabledClass, {'border-red-500': hasError}]"
+      :style="{height: height}" >
+
+      <div class="slot before" v-if="$slots.before">
         <slot name="before"></slot>
       </div>
 
       <div class="flex-grow">
         <input
+          ref="input"
           class="p-3 w-full h-full active:outline-none focus:outline-none leading-tight"
           :class="disabledClass"
           :id="labelId"
@@ -20,7 +24,7 @@
         />
       </div>
 
-      <div class="slot border-l" v-if="$slots.after">
+      <div class="slot after" v-if="$slots.after">
         <slot name="after"></slot>
       </div>
     </div>
@@ -48,6 +52,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    height: {
+      type: String,
+      default: 'auto'
     },
     value: {
       type: [Number, String],

@@ -14,6 +14,12 @@ import sort from './icons/sort'
 import sortDown from './icons/sortDown'
 import sortUp from './icons/sortUp'
 import home from './icons/home'
+import cogs from './icons/cogs'
+import account from './icons/account'
+import key from './icons/key'
+import envelope from './icons/envelope'
+import search from './icons/search'
+import bell from './icons/bell'
 
 export default {
   name: 'AppIcons',
@@ -46,7 +52,13 @@ export default {
     sort,
     sortDown,
     sortUp,
-    home
+    home,
+    cogs,
+    account,
+    key,
+    envelope,
+    search,
+    bell
   }
 }
 </script>

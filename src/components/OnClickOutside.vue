@@ -1,4 +1,3 @@
-<!-- https://codesandbox.io/s/qvow6lvp64 -->
 <script>
 export default {
   name: 'UiOnClickOutside',

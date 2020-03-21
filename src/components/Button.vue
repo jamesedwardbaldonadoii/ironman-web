@@ -2,8 +2,8 @@
   <button
     class="app-button"
     :disabled="disabledBtn"
-    :class="[btnColorClass, textColorClass, btnSizeClass, disabledBtn, {'rounded-full': circle}]"
-    @click="onClick"
+    :class="[btnColorClass, textColorClass, btnSizeClass, disabledBtn, {'rounded-full': circle, 'border-0': borderless}]"
+    @click="onClickEvent"
   >
     <AppLoader v-if="loading" :size="size" />
     <AppIcon
@@ -56,6 +56,10 @@ export default {
     },
     icon: {
       type: String
+    },
+    borderless: {
+      type: Boolean,
+      default: false
     },
     onClick: {
       type: Function,
@@ -146,6 +150,14 @@ export default {
       }
 
       return false
+    },
+
+    onClickEvent () {
+      if (!this.onClick) {
+        return () => {}
+      }
+
+      return this.onClick
     }
   },
 
