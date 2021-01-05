@@ -12,7 +12,7 @@
     "storybook:build": "build-storybook -c .storybook -o .out -s public"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cross-env": "^7.0.2",
     "fingerprintjs2": "^2.1.0",
     "moment": "^2.24.0",
